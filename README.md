@@ -1,4 +1,4 @@
 # Java---Xtreme-programming
 
 # extenção
-![alt text](image.png)
+![alt text](/extencoes.png)
