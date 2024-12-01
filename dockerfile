@@ -14,4 +14,4 @@ COPY ./src /app/src
 RUN mkdir -p /app/bin && javac -d /app/bin $(find src -name "*.java")
 
 # Defina o comando para rodar o aplicativo
-CMD ["java", "-cp", "/app/bin", "main.Main"]
+CMD ["java", "-cp", "/app/bin", "src.main.Main"]
