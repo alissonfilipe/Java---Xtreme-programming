@@ -1,14 +1,14 @@
-# Use a imagem oficial do OpenJDK
+# Use a imagem oficial do OpenJDK como base
 FROM openjdk:17
 
-# Crie um diretório de trabalho no contêiner
+# Crie um diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Copie o arquivo Java para o contêiner
-COPY Main.java /app/
+# Copie o código-fonte completo para o contêiner
+COPY ./src /app/src
 
-# Compile o código Java
-RUN javac Main.java
+# Compile todos os arquivos Java no diretório src
+RUN javac -d /app/bin $(find src -name "*.java")
 
-# Defina o caminho da classe principal
-CMD ["java", "-cp", "/app", "Main"]
+# Defina o comando para rodar o aplicativo
+CMD ["java", "-cp", "/app/bin", "main.Main"]
