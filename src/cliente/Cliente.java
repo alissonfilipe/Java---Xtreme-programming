@@ -19,6 +19,10 @@ public class Cliente {
         return saldo;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     public void debitarSaldo(double valor) {
         if (valor <= saldo) {
             saldo -= valor;

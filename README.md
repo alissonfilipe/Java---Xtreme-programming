@@ -5,9 +5,10 @@ Máquina de Refrigerante <br>
 <br>
 Dinheiro do caixa adicionado para troco não se mistura com dinheiro das vendas<br>
 
-- Lado Cliente<br>
+Lado Cliente<br>
 Efetuar Compra<br>
 Cálculo do Troco (Obrigatório)<br>
+<hr>
 Parte de Manutenção<br>
 Adicionar dinheiro ao caixa<br>
 Adicionar produto dentro da máquina<br>

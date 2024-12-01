@@ -4,6 +4,7 @@ import src.cliente.Cliente;
 import src.manuntecao.Caixa;
 import src.manuntecao.Produto;
 import src.manuntecao.Relatorio;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,24 +28,9 @@ public class Main {
             scanner.nextLine(); // Consumir a quebra de linha
 
             if (opcao == 1) {
-                System.out.println("Produtos disponíveis:");
-                for (int i = 0; i < produtos.size(); i++) {
-                    System.out.println(
-                            (i + 1) + " - " + produtos.get(i).getNome() + " - Preço: " + produtos.get(i).getPreco());
-                }
-                System.out.print("Escolha o produto (1-" + produtos.size() + "): ");
-                int escolhaProduto = scanner.nextInt();
-                scanner.nextLine(); // Consumir a quebra de linha
-
-                Produto produtoEscolhido = produtos.get(escolhaProduto - 1);
-                if (Caixa.efetuarCompra(cliente, produtoEscolhido)) {
-                    System.out.println("Compra realizada com sucesso!");
-                    produtosVendidos.add(produtoEscolhido);
-                } else {
-                    System.out.println("Saldo insuficiente!");
-                }
+                efetuarCompra(scanner, produtos, cliente, produtosVendidos);
             } else if (opcao == 2) {
-                Relatorio.gerarRelatorio(produtosVendidos);
+                menuManutencao(scanner, produtos, produtosVendidos);
             } else if (opcao == 3) {
                 System.out.println("Saindo...");
                 break;
@@ -54,6 +40,62 @@ public class Main {
         }
 
         scanner.close();
+    }
+
+    private static void efetuarCompra(Scanner scanner, List<Produto> produtos, Cliente cliente,
+            List<Produto> produtosVendidos) {
+        System.out.println("Produtos disponíveis:");
+        for (int i = 0; i < produtos.size(); i++) {
+            System.out.println(
+                    (i + 1) + " - " + produtos.get(i).getNome() + " - Preço: " + produtos.get(i).getPreco());
+        }
+        System.out.print("Escolha o produto (1-" + produtos.size() + "): ");
+        int escolhaProduto = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha
+
+        Produto produtoEscolhido = produtos.get(escolhaProduto - 1);
+        if (Caixa.efetuarCompra(cliente, produtoEscolhido)) {
+            System.out.println("Compra realizada com sucesso!");
+            produtosVendidos.add(produtoEscolhido);
+        } else {
+            System.out.println("Saldo insuficiente!");
+        }
+    }
+
+    private static void menuManutencao(Scanner scanner, List<Produto> produtos, List<Produto> produtosVendidos) {
+        while (true) {
+            System.out.println("==== Parte de Manutenção ====");
+            System.out.println("1 - Adicionar dinheiro ao caixa");
+            System.out.println("2 - Adicionar produto à máquina");
+            System.out.println("3 - Gerar relatório da renda");
+            System.out.println("4 - Voltar ao menu principal");
+            System.out.print("Escolha uma opção: ");
+
+            int opcaoManutencao = scanner.nextInt();
+            scanner.nextLine(); // Consumir a quebra de linha
+
+            if (opcaoManutencao == 1) {
+                System.out.print("Digite o valor a ser adicionado ao caixa: ");
+                double valor = scanner.nextDouble();
+                scanner.nextLine(); // Consumir a quebra de linha
+                Caixa.adicionarDinheiro(valor);
+                System.out.println("Valor adicionado ao caixa com sucesso!");
+            } else if (opcaoManutencao == 2) {
+                System.out.print("Digite o nome do produto: ");
+                String nomeProduto = scanner.nextLine();
+                System.out.print("Digite o preço do produto: ");
+                double precoProduto = scanner.nextDouble();
+                scanner.nextLine(); // Consumir a quebra de linha
+                produtos.add(new Produto(nomeProduto, precoProduto));
+                System.out.println("Produto adicionado com sucesso!");
+            } else if (opcaoManutencao == 3) {
+                Relatorio.gerarRelatorio(produtosVendidos);
+            } else if (opcaoManutencao == 4) {
+                break;
+            } else {
+                System.out.println("Opção inválida!");
+            }
+        }
     }
 
     private static List<Produto> carregarProdutos() {
