@@ -1,8 +1,5 @@
 # Java---Xtreme-programming
 
-# extenção
-![alt text](/extencoes.png)
-
 # orientação escrita
 Máquina de Refrigerante <br>
 <br>
@@ -25,6 +22,11 @@ Java - Xtreme Programming<br>
 `2ª Parte` - Casos de Teste (3 casos de teste) (JUnit - AssertEquals) (04 dez)<br>
 `3ª Parte` - Métricas (Complexidade Ciclomática Maccabe) (Metrics - Sonarkube) (09 dez)<br>
 `4ª Parte` - Refatoração (11 dez)<br>
+
+
+
+# extenção
+![alt text](/extencoes.png)
 
 
 
