@@ -4,25 +4,27 @@
 ![alt text](/extencoes.png)
 
 # orientação escrita
-Máquina de Refrigerante
+Máquina de Refrigerante <br>
+<br>
+Dinheiro do caixa adicionado para troco não se mistura com dinheiro das vendas<br>
 
-Dinheiro do caixa adicionado para troco não se mistura com dinheiro das vendas
-Lado Cliente
-Efetuar Compra
-Cálculo do Troco (Obrigatório)
-Parte de Manutenção
-Adicionar dinheiro ao caixa
-Adicionar produto dentro da máquina
-Relatório da renda
-Adicionar 5 produtos com preços distintos
-Cédulas: de 2, 5, 10 reais
-Moedas: de 50 centavos e 1 real
-Java - Xtreme Programming
+- Lado Cliente<br>
+Efetuar Compra<br>
+Cálculo do Troco (Obrigatório)<br>
+Parte de Manutenção<br>
+Adicionar dinheiro ao caixa<br>
+Adicionar produto dentro da máquina<br>
+Relatório da renda<br>
+Adicionar 5 produtos com preços distintos<br>
+Cédulas: de 2, 5, 10 reais<br>
+Moedas: de 50 centavos e 1 real<br>
+Java - Xtreme Programming<br>
+<br>
 
-1ª Parte - Entrega da app (02 dez)
-2ª Parte - Casos de Teste (3 casos de teste) (JUnit - AssertEquals) (04 dez)
-3ª Parte - Métricas (Complexidade Ciclomática Maccabe) (Metrics - Sonarkube) (09 dez)
-4ª Parte - Refatoração (11 dez)
+`1ª Parte` - Entrega da app (02 dez)<br>
+`2ª Parte` - Casos de Teste (3 casos de teste) (JUnit - AssertEquals) (04 dez)<br>
+`3ª Parte` - Métricas (Complexidade Ciclomática Maccabe) (Metrics - Sonarkube) (09 dez)<br>
+`4ª Parte` - Refatoração (11 dez)<br>
 
 
 
