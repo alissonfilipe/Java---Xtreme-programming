@@ -46,19 +46,22 @@ public class Main {
             List<Produto> produtosVendidos) {
         System.out.println("Produtos disponíveis:");
         for (int i = 0; i < produtos.size(); i++) {
-            System.out.println(
-                    (i + 1) + " - " + produtos.get(i).getNome() + " - Preço: " + produtos.get(i).getPreco());
+            System.out.println((i + 1) + " - " + produtos.get(i).getNome() + " - Preço: " + produtos.get(i).getPreco());
         }
         System.out.print("Escolha o produto (1-" + produtos.size() + "): ");
         int escolhaProduto = scanner.nextInt();
         scanner.nextLine(); // Consumir a quebra de linha
 
         Produto produtoEscolhido = produtos.get(escolhaProduto - 1);
-        if (Caixa.efetuarCompra(cliente, produtoEscolhido)) {
+
+        if (cliente.getSaldo() >= produtoEscolhido.getPreco()) {
+            double troco = cliente.getSaldo() - produtoEscolhido.getPreco();
+            cliente.setSaldo(troco); // Atualiza o saldo do cliente
             System.out.println("Compra realizada com sucesso!");
+            System.out.printf("Seu troco é: R$ %.2f%n", troco);
             produtosVendidos.add(produtoEscolhido);
         } else {
-            System.out.println("Saldo insuficiente!");
+            System.out.println("Saldo insuficiente! Por favor, adicione mais dinheiro.");
         }
     }
 
