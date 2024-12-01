@@ -34,6 +34,25 @@ Java - Xtreme Programming<br>
 `docker run -it --rm maquina-refrigerante`
 
 
+# raiz do projeto 
+.
+├── Dockerfile
+├── src
+│   ├── cliente
+│   │   └── Cliente.java
+│   ├── manutencao
+│   │   ├── Caixa.java
+│   │   ├── Produto.java
+│   │   └── Relatorio.java
+│   └── main
+│       └── Main.java
+├── resources
+│   └── produtos.json
+├── tests
+│   └── TesteMaquinaDeRefrigerante.java
+├── README.md
+└── extensoes.png
+
 
 # extenção
 ![alt text](/extencoes.png)
