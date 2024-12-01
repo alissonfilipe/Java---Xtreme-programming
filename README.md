@@ -3,6 +3,29 @@
 # extenção
 ![alt text](/extencoes.png)
 
+# orientação escrita
+Máquina de Refrigerante
+
+Dinheiro do caixa adicionado para troco não se mistura com dinheiro das vendas
+Lado Cliente
+Efetuar Compra
+Cálculo do Troco (Obrigatório)
+Parte de Manutenção
+Adicionar dinheiro ao caixa
+Adicionar produto dentro da máquina
+Relatório da renda
+Adicionar 5 produtos com preços distintos
+Cédulas: de 2, 5, 10 reais
+Moedas: de 50 centavos e 1 real
+Java - Xtreme Programming
+
+1ª Parte - Entrega da app (02 dez)
+2ª Parte - Casos de Teste (3 casos de teste) (JUnit - AssertEquals) (04 dez)
+3ª Parte - Métricas (Complexidade Ciclomática Maccabe) (Metrics - Sonarkube) (09 dez)
+4ª Parte - Refatoração (11 dez)
+
+
+
 # docker + Java
 
 4. Crie a imagem Docker
