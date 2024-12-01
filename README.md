@@ -23,6 +23,16 @@ Java - Xtreme Programming<br>
 `3ª Parte` - Métricas (Complexidade Ciclomática Maccabe) (Metrics - Sonarkube) (09 dez)<br>
 `4ª Parte` - Refatoração (11 dez)<br>
 
+# passos 
+
+1. Reconstruir a imagem:
+`docker build -t maquina-refrigerante .`
+
+<br>
+
+2. Executar o contêiner:
+`docker run -it --rm maquina-refrigerante`
+
 
 
 # extenção
