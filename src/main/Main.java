@@ -1,54 +1,66 @@
-package main;
+package src.main;
 
+import src.cliente.Cliente;
+import src.manuntecao.Caixa;
+import src.manuntecao.Produto;
+import src.manuntecao.Relatorio;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int opcao;
+        List<Produto> produtos = carregarProdutos();
+        Cliente cliente = new Cliente("João", 50.0);
+        List<Produto> produtosVendidos = new ArrayList<>();
 
-        System.out.println("==== Bem-vindo à Máquina de Refrigerantes ====");
-        do {
-            exibirMenu();
+        while (true) {
+            System.out.println("==== Bem-vindo à Máquina de Refrigerantes ====");
+            System.out.println("Menu Principal:");
+            System.out.println("1 - Efetuar Compra");
+            System.out.println("2 - Parte de Manutenção");
+            System.out.println("3 - Sair");
             System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer
 
-            switch (opcao) {
-                case 1:
-                    efetuarCompra();
-                    break;
-                case 2:
-                    acessarManutencao();
-                    break;
-                case 3:
-                    System.out.println("Obrigado por usar a Máquina de Refrigerantes!");
-                    break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
+            int opcao = scanner.nextInt();
+            scanner.nextLine(); // Consumir a quebra de linha
+
+            if (opcao == 1) {
+                System.out.println("Produtos disponíveis:");
+                for (int i = 0; i < produtos.size(); i++) {
+                    System.out.println(
+                            (i + 1) + " - " + produtos.get(i).getNome() + " - Preço: " + produtos.get(i).getPreco());
+                }
+                System.out.print("Escolha o produto (1-" + produtos.size() + "): ");
+                int escolhaProduto = scanner.nextInt();
+                scanner.nextLine(); // Consumir a quebra de linha
+
+                Produto produtoEscolhido = produtos.get(escolhaProduto - 1);
+                if (Caixa.efetuarCompra(cliente, produtoEscolhido)) {
+                    System.out.println("Compra realizada com sucesso!");
+                    produtosVendidos.add(produtoEscolhido);
+                } else {
+                    System.out.println("Saldo insuficiente!");
+                }
+            } else if (opcao == 2) {
+                Relatorio.gerarRelatorio(produtosVendidos);
+            } else if (opcao == 3) {
+                System.out.println("Saindo...");
+                break;
+            } else {
+                System.out.println("Opção inválida!");
             }
-        } while (opcao != 3);
+        }
 
         scanner.close();
     }
 
-    // Exibe o menu principal
-    private static void exibirMenu() {
-        System.out.println("\nMenu Principal:");
-        System.out.println("1 - Efetuar Compra");
-        System.out.println("2 - Parte de Manutenção");
-        System.out.println("3 - Sair");
-    }
-
-    // Simula a lógica de efetuar uma compra
-    private static void efetuarCompra() {
-        System.out.println("\n[Compra] Função ainda em desenvolvimento...");
-        // Aqui você pode chamar métodos para selecionar produtos, calcular troco, etc.
-    }
-
-    // Simula o acesso à parte de manutenção
-    private static void acessarManutencao() {
-        System.out.println("\n[Manutenção] Função ainda em desenvolvimento...");
-        // Aqui você pode chamar métodos para adicionar produtos, gerar relatórios, etc.
+    private static List<Produto> carregarProdutos() {
+        List<Produto> produtos = new ArrayList<>();
+        produtos.add(new Produto("Coca-Cola", 4.5));
+        produtos.add(new Produto("Pepsi", 4.0));
+        produtos.add(new Produto("Fanta", 3.5));
+        return produtos;
     }
 }

@@ -1,20 +1,14 @@
 [
     {
-        "id": 1,
         "nome": "Coca-Cola",
-        "preco": 3.50,
-        "quantidade": 10
+        "preco": 4.5
     },
     {
-        "id": 2,
         "nome": "Pepsi",
-        "preco": 3.00,
-        "quantidade": 5
+        "preco": 4.0
     },
     {
-        "id": 3,
         "nome": "Fanta",
-        "preco": 2.80,
-        "quantidade": 8
+        "preco": 3.5
     }
 ]

@@ -5,6 +5,7 @@ public class Cliente {
     private String nome;
     private double saldo;
 
+    // Construtor para inicializar o nome e saldo
     public Cliente(String nome, double saldo) {
         this.nome = nome;
         this.saldo = saldo;
