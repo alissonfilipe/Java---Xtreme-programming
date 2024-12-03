@@ -41,18 +41,18 @@ Java - Xtreme Programming<br>
 ├── src<br>
 │   ├── cliente<br>
 │   │   └── Cliente.java<br>
-│   ├── manutencao
-│   │   ├── Caixa.java
-│   │   ├── Produto.java
-│   │   └── Relatorio.java
-│   └── main
-│       └── Main.java
-├── resources
-│   └── produtos.json
-├── tests
-│   └── TesteMaquinaDeRefrigerante.java
-├── README.md
-└── extensoes.png
+│   ├── manutencao<br>
+│   │   ├── Caixa.java<br>
+│   │   ├── Produto.java<br>
+│   │   └── Relatorio.java<br>
+│   └── main<br>
+│       └── Main.java<br>
+├── resources<br>
+│   └── produtos.json<br>
+├── tests<br>
+│   └── TesteMaquinaDeRefrigerante.java<br>
+├── README.md<br>
+└── extensoes.png<br>
 
 
 # extenção
