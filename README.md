@@ -36,11 +36,11 @@ Java - Xtreme Programming<br>
 
 
 # raiz do projeto 
-.
-├── Dockerfile
-├── src
-│   ├── cliente
-│   │   └── Cliente.java
+.<br>
+├── Dockerfile<br>
+├── src<br>
+│   ├── cliente<br>
+│   │   └── Cliente.java<br>
 │   ├── manutencao
 │   │   ├── Caixa.java
 │   │   ├── Produto.java
