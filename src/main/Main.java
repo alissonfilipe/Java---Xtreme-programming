@@ -106,6 +106,8 @@ public class Main {
         produtos.add(new Produto("Coca-Cola", 4.5));
         produtos.add(new Produto("Pepsi", 4.0));
         produtos.add(new Produto("Fanta", 3.5));
+        produtos.add(new Produto("guarana Jesus", 5.0));
+        produtos.add(new Produto("pitlula", 3));
         return produtos;
     }
 }
