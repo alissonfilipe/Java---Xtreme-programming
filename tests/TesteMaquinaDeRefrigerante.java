@@ -1,7 +1,6 @@
 // tests/TesteMaquinaDeRefrigerante.java
 package tests;
 
-import src.cliente.Cliente;
 import src.manuntecao.Produto;
 import src.manuntecao.Caixa;
 import static org.junit.jupiter.api.Assertions.*;
