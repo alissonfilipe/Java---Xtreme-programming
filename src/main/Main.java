@@ -27,19 +27,22 @@ public class Main {
             int opcao = scanner.nextInt();
             scanner.nextLine(); // Consumir a quebra de linha
 
-            if (opcao == 1) {
-                efetuarCompra(scanner, produtos, cliente, produtosVendidos);
-            } else if (opcao == 2) {
-                menuManutencao(scanner, produtos, produtosVendidos);
-            } else if (opcao == 3) {
-                System.out.println("Saindo...");
-                break;
-            } else {
-                System.out.println("Opção inválida!");
+            switch (opcao) {
+                case 1:
+                    efetuarCompra(scanner, produtos, cliente, produtosVendidos);
+                    break;
+                case 2:
+                    menuManutencao(scanner, produtos, produtosVendidos);
+                    break;
+                case 3:
+                    System.out.println("Saindo...");
+                    scanner.close();
+                    return; // Termina o programa
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
             }
         }
-
-        scanner.close();
     }
 
     private static void efetuarCompra(Scanner scanner, List<Produto> produtos, Cliente cliente,
